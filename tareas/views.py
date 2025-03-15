@@ -217,6 +217,9 @@ def visitas(request):
 def inicio(request):
     return render(request, 'inicio.html')
 
+def proximamente(request):
+    return render(request, 'proximamente.html')
+
 
 def clasificacion_campeonato(request):
 
