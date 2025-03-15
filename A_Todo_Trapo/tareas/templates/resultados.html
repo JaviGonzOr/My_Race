@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% extends 'base.html' %}
+    {% block content %}
+
+    <h1 class="text-center">
+        {% load static %}
+        <img src="{% static 'index/img/my_race.png' %}" width="250" height="200">
+    </h1>
+
+    <div class="card text-center">
+        <h3 class="card-header" style="color: darkorange;">Resultado de las Carreras</h3>
+        <div class="card-body">
+            <div class="table-responsive">
+
+</head>
+
+<body>
+    <title>Mostrar Tabla</title>
+    <script>
+        // Función para mostrar u ocultar la tabla
+        function toggleTabla() {
+            var tabla = document.getElementById("tabla");
+            if (tabla.style.display === "none") {
+                tabla.style.display = "block";
+            } else {
+                tabla.style.display = "none";
+            }
+        }
+    </script>
+    </head>
+
+    <body>
+
+        <!-- Botón para desplegar la tabla -->
+        <button class="btn btn-outline-info" onclick="toggleTabla()">Mostrar/Ocultar Resultado</button>
+        <br><br><br><br>
+
+        <!-- Tabla oculta inicialmente -->
+        <table class="table table-light table-striped" id="tabla"
+            style="display:none; width: 100%; border-collapse: collapse;">
+            <div class="table-responsive">
+                <thead>
+                    <tr>
+                        <th>
+                            <h5 style="color: rgb(243, 172, 18);">PILOTO </h5>
+                        </th>
+                        <th>
+                            <h5 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">Trial Mountain</h5>
+                        </th>
+                        <th>
+                            <h5 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(51, 11, 11);">Montmeló</h5>
+                        </th>
+                        <th>
+                            <h5 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11);">Dragon Trail</h5>
+                        </th>
+                        <th>
+                            <h5 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11);">Mount Panorama</h5>
+                        </th>
+                        <th>
+                            <h5 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11);">Suzuka</h5>
+                        </th>
+                        <th>
+                            <h5 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(51, 11, 11);">Grand Valley</h5>
+                        </th>
+                        <th>
+                            <h5 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(51, 11, 11);">Spa Francorchamps</h5>
+                        </th>
+                        <th>
+                            <h5 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(51, 11, 11);">Kioto</h5>
+                        </th>
+                        <th>
+                            <h5 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(51, 11, 11);">Lago Maggiore</h5>
+                        </th>
+                        <th>
+                            <h5 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(51, 11, 11);">Tokio</h5>
+                        </th>
+                    </tr>
+                </thead>
+
+                {% for posicion in posiciones %}
+
+                <tr>
+                    <td><h5 style=" font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:rgb(0, 0, 147)">{{ posicion.piloto }}
+                        <img src="{{ posicion.image_url|default_if_none:'#' }}" height="75">
+                    </h5></td>
+                    <td style="color:rgb(231, 59, 11)">{{ posicion.trial }}</td>
+                    <td style="color:red">{{ posicion.cat }}</td>                    
+                    <td style="color:red">{{ posicion.dragon }}</td>
+                    <td style="color:red">{{ posicion.mount }}</td>
+                    <td style="color:red">{{ posicion.suzuka }}</td>
+                    <td style="color:red">{{ posicion.grand }}</td>
+                    <td style="color:red">{{ posicion.spa }}</td>
+                    <td style="color:red">{{ posicion.kioto }}</td>
+                    <td style="color:red">{{ posicion.lago }}</td>
+                    <td style="color:red">{{ posicion.tokio }}</td>
+
+                </tr>
+                        
+                {% endfor %}
+        </table>
+    </body>
+
+</html>
+{% endblock %}

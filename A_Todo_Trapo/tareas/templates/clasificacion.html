@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% extends 'base.html' %}
+    {% block content %}
+
+    <h1 class="text-center">
+        {% load static %}
+        <img src="{% static 'index/img/my_race.png' %}" width="250" height="200">
+    </h1>
+    <h1 class="text-center" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: darkorange;">Clasificación del Campeonato A Todo Trapo</h1>
+    <h1 class="text-center">
+        <img src="{% static 'index/img/grupo.jpg' %}" width="1150" height="800">
+    </h1>
+
+    <div class="card text-center">
+
+        <div class="card-body">
+            <div class="table-responsive">
+
+</head>
+
+<body>
+
+    <table class="table table-dark table-striped">
+
+        <tr>
+
+            <th>
+                <h6 style="color: yellow;">POSICION
+            </th>
+            </h6>
+            <th>
+                <h6 style="color: yellow;">PILOTO
+            </th>
+            </h6>
+            <th></th>
+            <th>
+                <h6 style="color: yellow;">CARRERAS DISPUTADAS
+            </th>
+            </h6>
+            <th>
+                <h6 style="color: yellow;">VICTORIAS
+            </th>
+            </h6>
+            <th>
+                <h6 style="color: yellow;">V.RAPIDAS
+            </th>
+            </h6>
+            <th>
+                <h6 style="color: yellow;">PODIOS
+            </th>
+            </h6>
+            <th>
+                <h6 style="color: yellow;">PUNTOS
+            </th>
+            </h6>
+
+        </tr>
+        {% for piloto in pilotos %}
+        <tr>
+
+            <td style=" color: greenyellow;">{{ forloop.counter }}</td>
+            <td style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(255, 255, 255)">{{ piloto.nombre }}
+                <img src="{{ piloto.image_url|default_if_none:'#' }}" height="150">
+            </td><td></td>
+            <td>{{ piloto.carreras_disputadas }}</td>
+            <td style=" color: orange;">{{ piloto.victorias }}</td>
+            <td style=" color: blueviolet;">{{ piloto.v_rapida }}</td>
+            <td style=" color: aquamarine">{{ piloto.podios }}</td>
+            <td style=" color:lime">{{ piloto.puntos }}</td>
+        </tr>
+                
+        {% endfor %}
+    </table>
+</body>
+
+</html>
+{% endblock %}

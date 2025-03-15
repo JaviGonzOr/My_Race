@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-center">
+    {% load static %}
+    <img src="{% static 'index/img/my_race.png' %}" width="250" height="200">
+</h1>
+
+<div class="card">
+    <h2 class="text-center" style="color: darkorange;">CAMPEONATO</h2>
+    <h1 class="card-border">
+        <img src="{% static 'index/img/sergio.jpg' %}" width="1300"height="800">
+    </h1>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-borderless table-striped">
+                <tr style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: blue;">
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col"></th>
+                    <th scope="col">Circuito</th>
+                    
+                    <th scope="col"></th>
+                    <br>
+                    <br>
+
+                    <a href="{% url 'vista_tarea' %}" class="btn btn-outline-warning">Ver Carreras</a>
+                    <a></a><a></a><a></a>
+                    <a name="" id="" class="btn btn-outline-info" href="{% url 'resultados' %}"
+                    role="button">Resultados</a>
+                    <br>
+                    <br>
+
+                        
+
+                </tr>
+
+                <tbody>
+                    <tr>
+                        {% for task in tarea %}
+
+                        
+                        <td><h5 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" class="fw-bold text-red">{{task.titulo}}</h5>
+                        </td>
+                        <td>
+                            <img src="{{task.archivos.first.imagen.url}}" height="100">
+                        </td>
+
+
+                        <td class="fw-bold">{{task.proveedor}}
+                        <td>
+                            <img src="{{task.archivos.last.imagen.url}}" height="100">
+                            <td>
+
+                            
+                        
+                           
+
+                           
+
+                        </td>
+                       
+                    </tr>
+                    </body>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+            {% endblock %}
+        </div>
+
+    </div>
+</div>

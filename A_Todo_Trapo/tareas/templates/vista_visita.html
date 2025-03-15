@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1 class="text-center">
+    {% load static %}
+    <img src="{% static 'index/img/my_race.png' %}" width="250" height="200">
+</h1>
+
+<div class="card">
+    <h2>
+        <div class="card-header" style="color: orange;">Programa Carrera</div>
+    </h2>
+    <div class="card w-75 mb-3">
+        <div class="card-body">
+            <div class="table-responsive">
+                {% for i in vista_visita %}
+
+                
+                <div class="card">
+                    <h5 style="color: red;">Datos de la Carrera:</h5>
+                    <div style="color: black;">{{i.observaciones}}</div>
+                </div>
+
+                <div class="card">
+                    <h5 style="color: red;">Fecha y hora:</h5>
+                    <div style="color: black;">{{i.visita}}</div>
+                </div>
+
+                <div class="card">
+                    <h5 style="color: red;">Ubicacion:</h5>
+                    <a href="{{i.ubicacion}}"><i class='fas fa-paper-plane'
+                            style='font-size:48px;color:rgb(58, 25, 222)'></i></a>
+
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

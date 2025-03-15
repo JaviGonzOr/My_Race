@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-center">
+    {% load static %}
+    <img src="{% static 'index/img/my_race.png' %}" width="250" height="200">
+</h1>
+
+<div class="card">
+    <h3 class="card-header" style="color: darkorange;">SUBIR VIDEO</h3>
+    <div class="card-body">
+        <div class="table-responsive">
+
+<body>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-outline-info" role="button">Subir Nuevo Video</button>
+    </form>
+    <a class="btn btn-outline-danger" role="button" href="{% url 'video_gallery' %}">Volver a la galería</a>
+</body>
+</html>
+{% endblock %}

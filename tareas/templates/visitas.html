@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h3 class="card-header" style="color: darkorange;">CARRERAS</h3>
+    <a href="{% url 'crear_visitas' %}" class="btn btn-outline-info" style="color: rgb(0, 7, 80);">Añadir Carrera</a>
+    <div id="calendar"></div>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'es',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                events: [
+                    {% for i in events %}
+                    {
+                    title: "{{i.titulo}}",
+                    start: "{{i.visita | date:'Y-m-d'}}",
+                    textColor: 'red',
+                    backgroundColor: "white",
+                    url: "http://127.0.0.1:8000/vista_visita/",                
+                },
+                {% endfor %}
+               
+                ]
+        });
+
+        calendar.render();
+        });
+    </script>
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+
+<h1>
+    <div class="card text-start">
+        <div class="card-body">
+            <h1 style="color: red;">Parti's Mode con Exito!!</h1>
+            <img src="{% static 'index/img/ironman.gif' %}" height="400" class="img-fluid rounded-top" alt="">
+            <a href="{% url 'home' %}" class="btn btn-outline-info" role="button">Redirecciona a la página Principal</a>
+        </div>
+    </div>
+</h1>
+
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<h1 class="text-center">
+
+    <img src="{% static 'index/img/my_race.png' %}" width="400" height="300">
+</h1>
+<h1 class="text-center">
+    <img src="{% static 'index/img/mafia.png' %}" width="800" height="800">
+</h1>
+<main class="container">
+    <h1 class="card-header" style="color: darkorange;">NORMATIVA Y SANCIONES</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="table-responsive" style="color: rgb(0, 0, 0);">
+        <table class="table table-borderless table-striped">
+
+            Hora sala abierta: 22:30 Horas <br>
+            Hora inicio clasificación: 22:45 Horas<br>
+            Hora inicio carrera: 23:00 Horas <br>
+            Lo primero y más importante es el respeto a todos los pilotos dentro y
+            fuera del circuito.<br>
+            Las sesiones de clasificación y carrera se iniciaran a la hora exacta
+            indicada.<br>
+            Una Vez iniciada la Clasificación no se podrá entrar en la carrera.<br>
+            Será obligatorio el uso del compuesto blando en cada carrera.<br>
+            Es obligatorio guardar la repetición para alegar cualquier tipo de
+            reclamación.<br>
+            Durante la clasificación no se puede molestar a pilotos en vuelta rápida.<br>
+            En caso de bandera azul hay que apartarse inmediatamente.<br>
+            En caso de abandono queda prohibido dejar la partida con piloto
+            automático o el coche en la pista.<br>
+            Si algún piloto pierde la conexión durante la partida se le otorgara la
+            última posición de la carrera. <br><br>
+
+            <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: red;">RECLAMACIONES</h3><br>
+            <h6 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"></h6>Si un piloto considera que ha sido perjudicado debido a una acción en pista
+            deberá presentar una reclamación por escrito al WhatsApp de reclamaciones o por el apartado de reclamaciones
+            de la App
+            antes de las 24:00h del día siguiente a la carrera. <br>
+            En el escrito se debe indicar los pilotos involucrados y la vuelta exacta de la
+            acción en pista por la cual se presenta la reclamación. <br>
+            La FIA tomara una decisión y la comunicara por escrito en el grupo de
+            WhatsApp.</h6> <br><br><br>
+            <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: red;">Acciones que tendrá en cuenta la FIA:</h3>
+            <h6 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">- Perjudicar a otro piloto. <br>
+            - Causar un accidente o salida de pista de otros pilotos. <br>
+            - Bloquear de forma ilegal o realizar más de 2 cambios de dirección para
+            evitar ser adelantado. <br>
+            - Reincorporarse a pista de forma insegura. <br>
+            - No facilitar el adelantamiento en caso de ser doblado. <br>
+            - Cualquier otra acción en pista que pueda ser considerada peligrosa o
+            insegura. <br>
+            - Faltas de respeto o uso de lenguaje incorrecto en el chat de voz de las
+            carreras.</h6> <br><br>
+            <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: red;">SANCIONES</h3>
+            <h6 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: orange;">1 Punto</h6>
+            - Colisionar con otro piloto y desestabilizarlo sin sacarlo de la pista.
+            <h6 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: orange;">2 Puntos</h6>
+            <h6 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">- No respetar la bandera azul molestando al piloto que te dobla. <br>
+            - Molestar a un piloto con vuelta rápida en la sesión de clasificación. <br>
+            - Cambiar más de 2 veces la trayectoria en la recta principal para evitar ser
+            adelantado. <br>
+            - Colisionar con otro piloto y sacarlo fuera de pista. <br>
+            - Reincorporarse a la pista de forma insegura molestando a otro piloto.</h6>
+            <h6 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: orange;">3 Puntos</h6>
+            <h6 style="font-family: Verdana, Geneva, Tahoma, sans-serif;"></h6>- Colisionar con otro piloto y sacarlo fuera de pista haciéndole perder
+            posición.
+            <h6 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: orange;">5 Puntos</h6>
+            <h6 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">- Colisionar con otro piloto y no devolver la posición.
+            <h6 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: orange;">Descalificación</h6>
+            <h6 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">- Conducción temeraria.
+            - Falta de respeto.</h6> <br><br><br>
+            <h4 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: red;">En la primera y última vuelta de la carrera las
+            sanciones por accidente con otros pilotos serán
+            sancionadas con el doble de puntos.</h4> <br><br><br><br>
+    </div>
+    <div class="card">
+        <h3 class="card-header" style="color: darkorange;">Formulario de reclamaciones</h3>
+        <div class="contenedorFormulario">
+
+            {% if "valido" in request.GET %}
+
+            <p style="color: rgba(0, 86, 3, 0.651)" ;>Información enviada correctamente, Gracias!!</p>
+
+            {% endif %}
+
+            <form action="" method="POST" style="text-align: center;">
+                {% csrf_token %}
+                <table style="color: rgb(8, 2, 2); margin: 20px auto;">{{miFormulario.as_table}}</table>
+                <button type="submit" class="btn btn-outline-success">Enviar</button>
+
+            </form>
+
+        </div>
+
+        {% endblock %}

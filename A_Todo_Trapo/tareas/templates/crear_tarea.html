@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="text-center">
+    {% load static %}
+    <img src="{% static 'index/img/my_race.png' %}" width="250" height="200">
+</h1>
+<main class="container">
+    <div class="card card-body">
+        <h1 class="card-header" style="color: darkorange;">Crear Tarea</h1>
+
+        {{error}}
+
+        <form action="/tarea/crear/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="row-cols-2">
+
+                {{form.as_p}}
+            </div>
+            <button class="btn btn-secondary">Aceptar</button>
+        </form>
+</main>
+
+{% endblock %}

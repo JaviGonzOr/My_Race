@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1 class="text-center">
+    {% load static %}
+    <img src="{% static 'index/img/my_race.png' %}" width="250" height="200">
+</h1>
+
+<div class="card">
+    <h3 class="card-header" style="color: darkorange;">CARRERAS COMPLETADAS</h3>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <tr style="color: blue;">
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Circuito</th>
+                    <th scope="col"></th>
+                    <th scope="col">Completada</th>
+                    
+                    <th scope="col"></th>
+                    <br>
+                    <br>
+
+                <tbody>
+                    <tr>
+                        {% for task in tarea %}
+                        <td class="fw-bold">{{task.titulo}}</td>
+                        <td class="fw-bold">{{task.cliente}}
+                            <img src="{{task.archivos.first.imagen.url}}" height="100">
+                        </td>
+                        <td class="fw-bold">{{task.proveedor}}
+                            <img src="{{task.archivos.last.imagen.url}}" height="100">
+                        </td>
+                        <td class="fw-bold">{{task.modelo}}
+                            
+                        
+                        <td class="fw-bold">{{task.completado|date:'j M Y '}}</td>
+                        <td>
+                            
+                            <a href="{% url 'tarea_eliminada' task.id %}" class="btn btn-outline-danger"
+                                role="button">Eliminar</a>
+                        </td>
+                    </tr>
+                    </body>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+            {% endblock %}
+        </div>
+
+    </div>
+</div>

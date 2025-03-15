@@ -1,0 +1,75 @@
+*{
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+    margin: 1rem;
+}
+.comic-neue-light {
+    font-family: "Comic Neue", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .comic-neue-regular {
+    font-family: "Comic Neue", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .comic-neue-bold {
+    font-family: "Comic Neue", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .comic-neue-light-italic {
+    font-family: "Comic Neue", serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .comic-neue-regular-italic {
+    font-family: "Comic Neue", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .comic-neue-bold-italic {
+    font-family: "Comic Neue", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  .langar-regular {
+    font-family: "Langar", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+    
+
+section{
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    
+}
+
+table{
+    margin: 0 auto;
+    text-align: center;
+    width: 70%;
+}
+
+th{
+    background-color: rgb(232, 182, 15);
+    color: white;
+}
+
+
+tr:nth-child(odd){
+    background-color: rgb(106, 106, 192);
+}
