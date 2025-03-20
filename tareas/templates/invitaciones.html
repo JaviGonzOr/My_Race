@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<h1 class="text-center">
+
+    <img src="{% static 'index/img/my_race.png' %}" width="400" height="300">
+</h1>
+
+<div class="card">
+    <h3 class="card-header" style="color: darkorange;">Formulario de Invitaciones</h3>
+    <div class="contenedorFormulario">
+
+        {% if "valido" in request.GET %}
+
+        <p style="color: rgba(0, 86, 3, 0.651)" ;>Invitación enviada correctamente, Gracias!!</p>
+
+        {% endif %}
+
+        <form action="" method="POST" style="text-align: center;">
+            {% csrf_token %}
+            <table style="color: rgb(8, 2, 2); margin: 20px auto;">{{miFormulario.as_table}}</table>
+            <button type="submit" class="btn btn-outline-success">Enviar</button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

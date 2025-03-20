@@ -42,6 +42,7 @@ urlpatterns = [
     path ('visitas/crear/', views.crear_visitas, name = 'crear_visitas'),
     path ('vista_tarea/', views.vista_tarea, name = 'vista_tarea'),
     path ('contacto/',views.contacto, name="contacto"),
+    path ('invitaciones/',views.invitaciones, name="invitaciones"),
     path ('tarea/<int:tarea_id>/', views.detalle_tarea, name = 'detalle_tarea'),
     path ('tarea/<int:tarea_id>/completado', views.tarea_completa, name = 'tarea_completa'),
     path ('tarea/<int:tarea_id>/eliminado', views.tarea_eliminada, name = 'tarea_eliminada'),

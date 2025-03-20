@@ -10,7 +10,7 @@ from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
 from django.views.generic import TemplateView
-from .forms import FormularioContacto
+from .forms import FormularioContacto, FormularioInvitaciones
 from django.core.mail import EmailMessage
 from django.contrib.auth.decorators import login_required
 
@@ -191,6 +191,33 @@ def contacto(request):
                 return redirect("/contacto/?novalido")
 
     return render(request, "contacto.html", {'miFormulario': formulario_contacto})
+
+
+
+def invitaciones(request):
+    formulario_contacto = FormularioInvitaciones()
+
+    if request.method == "POST":
+        formulario_invitaciones = FormularioInvitaciones(data=request.POST)
+        if formulario_invitaciones.is_valid():
+            nombre = request.POST.get("nombre")
+            email = request.POST.get("email")
+            contenido = request.POST.get("contenido")
+
+            email = EmailMessage("Mensaje desde App My_Race by GonzOr",
+                                 "El usuario con nombre {} con email {} ha comentado que:\n\n {}".format(
+                                     nombre, email, contenido),
+                                 "", ["lamafiasmostodos@gmail.com"], reply_to=[email])
+
+            try:
+                email.send()
+
+                return redirect("/invitaciones/?valido")
+            except:
+                return redirect("/invitaciones/?novalido")
+
+    return render(request, "invitaciones.html", {'miFormulario': formulario_contacto})
+
 
 
 def vista_tarea(request):

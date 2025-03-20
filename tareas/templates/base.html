@@ -96,7 +96,9 @@
               </a>
             </li>
 
+
             {% if user.is_authenticated %}
+
             <!--
             <li class="nav-item">
               <a href="/tarea/crear" class="nav-link">
@@ -105,7 +107,7 @@
               </a>
             </li>
             -->
-           
+
             <li class="nav-item">
               <a href="/pilotos" class="nav-link">
                 <i class="fa-solid fa-person-running" style='font-size:24px;color:rgb(137, 137, 137);'></i>
@@ -175,11 +177,12 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/registro" class="nav-link">
+              <a href="/invitaciones" class="nav-link">
                 <i class="nac-icon far fa-registered" style='font-size:24px;color:rgb(219, 253, 27);'></i>
-                <p>Registrarse</p>
+                <p>Invitaciones</p>
               </a>
             </li>
+
             {% endif %}
             <!-- Brand Logo -->
             <a href="{% url 'inicio' %}" class="brand-link">
