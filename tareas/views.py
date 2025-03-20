@@ -220,6 +220,9 @@ def inicio(request):
 def proximamente(request):
     return render(request, 'proximamente.html')
 
+def pilotos(request):
+    return render(request, 'pilotos.html')
+
 
 def clasificacion_campeonato(request):
 
@@ -229,7 +232,7 @@ def clasificacion_campeonato(request):
 
 
 def resultado_carrera(request):
-    posicion = ResultadoCarrera.objects.all().order_by('-cat' )
+    posicion = ResultadoCarrera.objects.all().order_by('-spa' )
 
     return render(request, 'resultados.html', {'posiciones':posicion})
 

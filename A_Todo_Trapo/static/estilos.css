@@ -73,3 +73,9 @@ th{
 tr:nth-child(odd){
     background-color: rgb(106, 106, 192);
 }
+
+body {
+  background-image: url('/static/index/img/gran-turismo-7.jpg'); /* ruta de la imagen */
+  background-size: cover;
+  background-position: center;
+}
