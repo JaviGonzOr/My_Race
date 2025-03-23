@@ -2,7 +2,7 @@
 {% block content %}
 <div class="card">
     <h3 class="card-header" style="color: darkorange;">CARRERAS</h3>
-    <a href="{% url 'crear_visitas' %}" class="btn btn-outline-info" style="color: rgb(0, 7, 80);">Añadir Carrera</a>
+    <a href="{% url 'add_event' %}" class="btn btn-outline-info" style="color: rgb(0, 7, 80);">Añadir Carrera</a>
     <div id="calendar"></div>
 
     <script type="text/javascript">
@@ -22,8 +22,8 @@
                     {
                     title: "{{i.titulo}}",
                     start: "{{i.visita | date:'Y-m-d'}}",
-                    textColor: 'red',
-                    backgroundColor: "white",
+                    textColor: 'white',
+                    backgroundColor: "black",
                     url: "http://127.0.0.1:8000/vista_visita/",                
                 },
                 {% endfor %}

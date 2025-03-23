@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
-from .forms import Proveedor, VisitasForm, ModeloForm,ResultadoCarreraForm, VideoForm
-from .models import Tarea, Proveedor,ImagenTarea, Visitas, Modelo, Piloto, ResultadoCarrera, Video
+from .forms import Proveedor, VisitasForm, ModeloForm,ResultadoCarreraForm, VideoForm, EventForm
+from .models import Tarea, Proveedor,ImagenTarea, Visitas, Modelo, Piloto, ResultadoCarrera, Video, Event
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
@@ -13,12 +13,38 @@ from django.views.generic import TemplateView
 from .forms import FormularioContacto, FormularioInvitaciones
 from django.core.mail import EmailMessage
 from django.contrib.auth.decorators import login_required
+from django.utils.dateparse import parse_datetime
+
 
 
 
 
 # Create your views here.
 
+def calendar_view(request):
+    return render(request, 'calendario.html')
+
+def event_list(request):
+    events = Visitas.objects.all()
+    event_data = [
+        {
+            'title': event.titulo,
+            'start': event.start_date.strftime('%d/%m/%Y'),
+            'end': event.end_date.strftime('%d/%m/%Y'),
+            'description': event.descripcion
+        } for event in events
+    ]
+    return JsonResponse(event_data, safe=False)
+
+def add_event(request):
+    if request.method == 'POST':
+        form = VisitasForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('visitas')
+    else:
+        form = VisitasForm()
+    return render(request, 'add_event.html', {'form': form})
 
 def home(request):
     return render(request, 'home.html')
@@ -227,15 +253,12 @@ def vista_tarea(request):
 
 
 def vista_visita(request):
-    vista_visita = Visitas.objects.filter(
-        usuario = request.user,
-        )
+    vista_visita = Visitas.objects.filter( )
     return render(request, "vista_visita.html", {"vista_visita": vista_visita})
 
 
 def visitas(request):
-    events = Visitas.objects.filter(
-        usuario = request.user)
+    events = Visitas.objects.filter()
 
     return render(request, 'visitas.html', {'events': events})
 
@@ -246,6 +269,9 @@ def inicio(request):
 
 def proximamente(request):
     return render(request, 'proximamente.html')
+
+def Segundo_camp(request):
+    return render(request, 'Segundo_camp.html')
 
 def pilotos(request):
     return render(request, 'pilotos.html')

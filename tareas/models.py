@@ -39,7 +39,6 @@ class Tarea (models.Model):
 class Visitas(models.Model):
     titulo = models.CharField(max_length=100)
     observaciones = models.CharField(max_length=100)
-    usuario = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     visita = models.DateTimeField(null=True, blank=True)
     ubicacion = models.URLField(null=True, blank=True)
    
@@ -129,3 +128,15 @@ class Video(models.Model):
 
     def __str__(self):
         return self.title
+
+from django.db import models
+
+class Event(models.Model):
+    titulo = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.titulo

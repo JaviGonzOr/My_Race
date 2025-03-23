@@ -29,6 +29,7 @@ urlpatterns = [
     path ('registro/', views.registro, name='registro'),
     path ('inicio/', views.inicio, name='inicio'), 
     path ('proximamente/', views.proximamente, name='proximamente'), 
+    path ('Segundo_camp/', views.Segundo_camp, name='Segundo_camp'), 
     path ('pilotos/', views.pilotos, name='pilotos'), 
     path ('grafico/', views.grafico, name ='grafico'),
     path ('vista_visita/', views.vista_visita, name ='vista_visita'),
@@ -50,6 +51,10 @@ urlpatterns = [
     path ('resultados/', views.resultado_carrera, name='resultados'),
     path('video_gallery', views.video_gallery, name='video_gallery'),
     path('upload/', views.upload_video, name='upload_video'),
+    path('calendario/', views.calendar_view, name='calendar'),
+    path('', views.event_list, name='event_list'),
+    path('add/', views.add_event, name='add_event'),
+   
    
 
     

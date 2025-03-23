@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import DateTimeInput
-from .models import Tarea, Proveedor, Visitas, Modelo, ResultadoCarrera, Video
+from .models import Tarea, Proveedor, Visitas, Modelo, ResultadoCarrera, Video, Event
 
 
 class ResultadoCarreraForm (forms.ModelForm):
@@ -48,6 +48,11 @@ class VideoForm(forms.ModelForm):
     class Meta:
         model = Video
         fields = ['title', 'description', 'video_file']
+
+class EventForm(forms.ModelForm):
+    class Meta:
+        model = Event
+        fields = ['titulo', 'descripcion', 'start_date', 'end_date']
 
 
 
