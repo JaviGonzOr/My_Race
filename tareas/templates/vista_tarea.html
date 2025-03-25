@@ -6,45 +6,45 @@
 <h1 class="text-center">
     {% load static %}
     <img src="{% static 'index/img/my_race.png' %}" width="250" height="200">
-</h1>
-<h1 class="text-center">
-    <img src="{% static 'index/img/7cx5.gif' %}" width="550" height="480">
-    <img src="{% static 'index/img/7AEZ.gif' %}" width="550" height="480">
 
 </h1>
-
 <div class="card">
-    <h1 style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"
-    class="text-center text-orange">CARRERAS</h1><br><br><br><br>
+    <h1 style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" class="text-center text-orange">
+        CARRERAS</h1><br><br><br><br>
     <div class="card-body">
         <div class="table-responsive">
 
-           
+
             <tbody>
                 {% for i in vista_tarea %}
-                      
-                
+
+
                 <h5 style="color: red;">Titulo:</h5>
                 <h2 style="font-family:'Times New Roman', Times, serif; color:rgb(14, 22, 112) ">{{i.titulo}}</h2>
                 <br>
                 <br>
                 <h5 style="color: red;">Configuracion Carrera:</h5>
-                <div style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: black;">{{i.configuracion}}</div>
+                <div style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: black;">
+                    {{i.configuracion}}</div>
                 <br>
                 <br>
                 <h5 style="color: red;">Marca y Modelo:</h5>
-                <h4 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: rgb(151, 27, 240);">{{i.coche}}</h4>
+                <h4
+                    style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: rgb(151, 27, 240);">
+                    {{i.coche}}</h4>
                 <br>
                 <br>
                 <h5 style="color: red;">Descripción:</h5>
-                <div style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: black;">{{i.descripcion}}</div>
+                <div
+                    style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: black;">
+                    {{i.descripcion}}</div>
                 <br>
-                <br>                
+                <br>
                 <h5 style="color: red;">Circuito:</h5>
 
             </tbody>
-           
-            
+
+
 
             <div>
                 <a href="{{i.archivos.last.imagen.url}}"><img src="{{i.archivos.last.imagen.url}}" height="250"
@@ -53,7 +53,7 @@
                 <br>
                 <br>
                 <br>
-               
+
                 <a href="{{i.archivos.first.imagen.url}}" class="btn btn-danger">Coche</a>
 
 

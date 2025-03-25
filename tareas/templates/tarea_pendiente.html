@@ -9,7 +9,15 @@
 
 <div class="card">
     <h2 class="text-center"> <img src="{% static 'index/img/Atodo.png' %}" width="950" height="700"></h2>
-    
+    </h1>
+    <h1 class="text-center">
+        <img src="{% static 'index/img/kart.gif' %}" width="250" height="280">
+        <img src="{% static 'index/img/t16.gif' %}" width="250" height="280">
+        <img src="{% static 'index/img/super.gif' %}" width="250" height="280">
+        <img src="{% static 'index/img/mx5.gif' %}" width="250" height="280">
+        <img src="{% static 'index/img/7AEZ.gif' %}" width="550" height="480">
+    </h1>
+
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-borderless table-striped">
@@ -24,13 +32,13 @@
                     <br>
                     <br>
 
-                    <a href="{% url 'vista_tarea' %}" class="btn btn-outline-warning">Ver Carreras</a>
+                    <a href="{% url 'vista_tarea' %}" class="btn btn-outline-warning">Calendario</a>
                     <a></a><a></a><a></a>
                     <a name="" id="" class="btn btn-outline-info" href="{% url 'resultados' %}"
                         role="button">Resultados</a>
-                        <a name="" id="" class="btn btn-outline-secondary" href="{% url 'proximamente' %}"
+                    <a name="" id="" class="btn btn-outline-secondary" href="{% url 'proximamente' %}"
                         role="button">Formato WEC</a>
-                        <a name="" id="" class="btn btn-outline-success" href="{% url 'Segundo_camp' %}"
+                    <a name="" id="" class="btn btn-outline-success" href="{% url 'Segundo_camp' %}"
                         role="button">Formato Multiclase</a>
                     <br>
                     <br>
@@ -56,7 +64,7 @@
 
                         <td class="fw-bold">{{task.proveedor}}
                         <td>
-                            <img src="{{task.archivos.last.imagen.url}}" height="200">
+                            <img src="{{task.archivos.last.imagen.url}}" height="150">
                         <td>
 
 

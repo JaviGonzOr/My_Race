@@ -54,18 +54,77 @@
                         </th>
                         <th>
                             <h5
-                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(51, 11, 11);">
-                                Spa Francorchamps</h5>
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                Alemania</h5>
                         </th>
+                        <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                Austria</h5>
+                        </th>
+                        <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                Alsace</h5>
+                        </th>
+                        <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(51, 11, 11);">
+                                Spa</h5>
+                        </th>
+                        <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                M_Panorama</h5>
+                        </th>
+                        <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                Fisherman's</h5>
+                        </th>
+                        <th>
                         <th>
                             <h5
                                 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11);">
                                 Watkins</h5>
                         </th>
                         <th>
+                        <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                California</h5>
+                        </th>
+                        <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                Inglaterra</h5>
+                        </th>
+                        <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                Fuji</h5>
+                        </th>
+                        <th>
+
                             <h5
                                 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11);">
                                 Daytona</h5>
+                        </th>
+                        <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                High_Speed</h5>
+                        </th>
+                        <th>
+                        <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                Italia</h5>
+                        </th>
+                        <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                Canadá</h5>
                         </th>
                         <th>
                             <h5
@@ -73,11 +132,37 @@
                                 Suzuka</h5>
                         </th>
                         <th>
+                        <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                Blue_Moon</h5>
+                        </th>
+                        <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                Monterey</h5>
+                        </th>
+                        <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                Suiza</h5>
+                        </th>
+                        <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                España</h5>
+                        </th>
+                        <th>
                             <h5
                                 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(51, 11, 11);">
                                 Le mans</h5>
                         </th>
                         <th>
+                            <h5
+                                style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(51, 11, 11)">
+                                Nurburgring_24h</h5>
+                        </th>
+
 
                     </tr>
                 </thead>
@@ -92,12 +177,29 @@
                             <img src="{{ posicion.image_url|default_if_none:'#' }}" height="75">
                         </h5>
                     </td>
-                    <td style="color:rgb(231, 59, 11)">{{ posicion.Interlagos }}</td>
+                    <td style="color:red">{{ posicion.brasil }}</td>
+                    <td style="color:red">{{ posicion.alemania }}</td>
+                    <td style="color:red">{{ posicion.austria }}</td>
+                    <td style="color:red">{{ posicion.alsace }}</td>
                     <td style="color:red">{{ posicion.spa }}</td>
+                    <td style="color:red">{{ posicion.m_panorama }}</td>
+                    <td style="color:red">{{ posicion.fishermans }}</td>
                     <td style="color:red">{{ posicion.watkins }}</td>
+                    <td style="color:red">{{ posicion.california }}</td>
+                    <td style="color:red">{{ posicion.inglaterra }}</td>
+                    <td style="color:red">{{ posicion.fuji }}</td>
                     <td style="color:red">{{ posicion.daytona }}</td>
+                    <td style="color:red">{{ posicion.high_speed }}</td>
+                    <td style="color:red">{{ posicion.italia }}</td>
+                    <td style="color:red">{{ posicion.canada }}</td>
                     <td style="color:red">{{ posicion.suzuka }}</td>
+                    <td style="color:red">{{ posicion.blue_moon }}</td>
+                    <td style="color:red">{{ posicion.monterey }}</td>
+                    <td style="color:red">{{ posicion.suiza }}</td>
+                    <td style="color:red">{{ posicion.españa }}</td>
                     <td style="color:red">{{ posicion.lemans }}</td>
+                    <td style="color:red">{{ posicion.nurburgring }}</td>
+                    <th>
 
                 </tr>
                 {% endfor %}

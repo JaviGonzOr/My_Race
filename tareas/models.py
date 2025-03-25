@@ -89,23 +89,36 @@ class Carrera(models.Model):
 class ResultadoCarrera(models.Model):
     carrera = models.ForeignKey(Carrera, on_delete=models.CASCADE, related_name="resultados")
     piloto = models.ForeignKey(Piloto, on_delete=models.CASCADE, related_name="resultados")
-    Interlagos = models.IntegerField(null=True)
+    brasil = models.IntegerField(null=True)
+    alemania = models.IntegerField(null=True)
+    austria = models.IntegerField(null=True)
+    alsace = models.IntegerField(null=True)
     spa = models.IntegerField(null=True)
+    m_panorama = models.IntegerField(null=True)
+    fishermans = models.IntegerField(null=True)
     watkins = models.IntegerField(null=True)
+    california = models.IntegerField(null=True)
+    inglaterra = models.IntegerField(null=True)
+    fuji = models.IntegerField(null=True)
     daytona = models.IntegerField(null=True)
+    high_speed = models.IntegerField(null=True)
+    italia = models.IntegerField(null=True)
+    canada = models.IntegerField(null=True)
     suzuka = models.IntegerField(null=True)
+    blue_moon = models.IntegerField(null=True)
+    monterey = models.IntegerField(null=True)
+    suiza= models.IntegerField(null=True)
+    españa = models.IntegerField(null=True)
     lemans = models.IntegerField(null=True)
+    nurburgring = models.IntegerField(null=True)
     miniatura = models.ImageField(upload_to='Chimeneas/', null=True)
-    foto_circuito = models.ImageField(upload_to='Chimeneas/', null=True)
+   
     
 
     def image_url(self):
         if self.miniatura and hasattr(self.miniatura, 'url'):
             return self.miniatura.url
-    def imagen_url(self):
-        if self.foto_circuito and hasattr(self.foto_circuito, 'url'):
-            return self.foto_circuito.url
-
+    
 
 
     def __str__(self):
