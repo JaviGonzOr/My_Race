@@ -57,11 +57,10 @@
       <ul class="navbar-nav ml-auto">
         <!-- Notifications Dropdown Menu -->
 
-        {% if user.is_authenticated %}
         <h7><a href="{% url 'tarea' %}" style="text-align: right; margin-right: 100px; color: rgb(0, 0, 0);">Bienvenid@
             &nbsp;&nbsp;&nbsp;<img src="{% static 'index/img/espana.png' %}" width="30"
               height="30">&nbsp;&nbsp;&nbsp;<em style="color: blue;">{{user.username}} {{user.last_name}}</em></a></h7>
-        {% endif %}
+       
 
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
@@ -97,7 +96,7 @@
             </li>
 
 
-            {% if user.is_authenticated %}
+           
 
             <!--
             <li class="nav-item">
@@ -161,7 +160,7 @@
                 <p>Visita la Web</p>
               </a>
             </li>
-            {% else %}
+            
             </li>
             <!--
             <li class="nav-item">
@@ -170,12 +169,13 @@
                 <p>Registrar Usuarios</p>
               </a>
             </li>-->
-            <li class="nav-item">
+            <!--  <li class="nav-item">
               <a href="/i_sesion" class="nav-link">
                 <i class="nav-icon far fa-user-circle" style='font-size:24px;color:rgb(47, 232, 183);'></i>
                 <p>Iniciar Sesión</p>
               </a>
-            </li>
+            </li>-->
+
             <li class="nav-item">
               <a href="/invitaciones" class="nav-link">
                 <i class="nac-icon far fa-registered" style='font-size:24px;color:rgb(219, 253, 27);'></i>
@@ -183,7 +183,6 @@
               </a>
             </li>
 
-            {% endif %}
             <!-- Brand Logo -->
             <a href="{% url 'inicio' %}" class="brand-link">
               <img src="{% static 'index/img/my_race.png' %}" width="200" height="180">
