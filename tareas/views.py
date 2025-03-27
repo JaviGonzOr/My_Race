@@ -78,19 +78,17 @@ def registro(request):
         })
 
 
-@login_required
 def tarea_pendiente(request):
     tareas = Tarea.objects.filter(completado__isnull=True)
     return render(request, 'tarea_pendiente.html', {'tarea': tareas})
 
 
-@login_required
 def tarea_completada(request):
     tareas = Tarea.objects.filter(completado__isnull=True)
     return render(request, 'tarea_completada.html', {'tarea': tareas})
 
 
-@login_required
+
 def detalle_tarea(request, tarea_id):
     if request.method == 'GET':
         task = get_object_or_404(Tarea, pk=tarea_id)
@@ -103,7 +101,7 @@ def detalle_tarea(request, tarea_id):
         return redirect('tarea')
     
 
-@login_required
+
 def tarea_completa(request, tarea_id):
     task = get_object_or_404(Tarea, pk=tarea_id, usuario=request.user)
     if request.method == 'POST':
@@ -112,7 +110,6 @@ def tarea_completa(request, tarea_id):
         return redirect('tarea')
 
 
-@login_required
 def tarea_eliminada(request, tarea_id):
     task = get_object_or_404(Tarea, pk=tarea_id, usuario=request.user)
     if request.method == 'POST':
@@ -122,7 +119,7 @@ def tarea_eliminada(request, tarea_id):
     return render(request, 'eliminado.html')
 
 
-@login_required
+
 def crear_tarea(request):
     if request.method == 'GET':
         return render(request, 'crear_tarea.html', {
@@ -135,7 +132,7 @@ def crear_tarea(request):
         new_task.save()
         return redirect('tarea')
     
-@login_required
+
 def crear_visitas(request):
     if request.method == 'GET':
         return render(request, 'crear_visitas.html', {
@@ -149,7 +146,7 @@ def crear_visitas(request):
         return redirect('visitas')
 
 
-@login_required
+
 def c_sesion(request):
     logout(request)
     return render(request, 'eliminado.html')
@@ -193,7 +190,7 @@ def eliminado(request):
 
 
 
-@login_required
+
 def contacto(request):
     formulario_contacto = FormularioContacto()
 
@@ -247,8 +244,7 @@ def invitaciones(request):
 
 
 def vista_tarea(request):
-    vista_tarea = Tarea.objects.filter(
-        usuario = request.user, completado__isnull = True)
+    vista_tarea = Tarea.objects.filter()
     return render(request, "vista_tarea.html", {"vista_tarea": vista_tarea})
 
 
