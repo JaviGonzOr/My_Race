@@ -32,6 +32,7 @@ class Tarea (models.Model):
     usuario = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     circuito = models.ForeignKey(Proveedor,null=True, on_delete = models.PROTECT)
     coche = models.ForeignKey(Modelo, null=True, on_delete = models.PROTECT)
+    fecha_hora = models.TextField(null=True, blank=True)
     
     def __str__(self):
         return self.titulo 

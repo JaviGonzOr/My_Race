@@ -23,6 +23,10 @@
                 <h2 style="font-family:'Times New Roman', Times, serif; color:rgb(14, 22, 112) ">{{i.titulo}}</h2>
                 <br>
                 <br>
+                <h5 style="color: red;">Fecha y Hora:</h5>
+                <h2 style="font-family:'Times New Roman', Times, serif; color:rgb(243, 172, 91) ">{{i.fecha_hora}}</h2>
+                <br>
+                <br>
                 <h5 style="color: red;">Configuracion Carrera:</h5>
                 <div style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: black;">
                     {{i.configuracion}}</div>
@@ -47,6 +51,8 @@
 
 
             <div>
+               <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 
+               'Trebuchet MS', sans-serif; color: rgb(2, 2, 181);"  > {{ i.circuito }}</h2>
                 <a href="{{i.archivos.last.imagen.url}}"><img src="{{i.archivos.last.imagen.url}}" height="250"
                         width="350"></a>
                 <br>
