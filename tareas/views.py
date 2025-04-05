@@ -304,3 +304,6 @@ def mostrar_tabla(request):
     
     datos = ResultadoCarrera.objects.all()
     return render(request, 'resultados.html', {'datos': datos})
+
+
+

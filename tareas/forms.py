@@ -2,7 +2,6 @@ from django import forms
 from django.forms import DateTimeInput
 from .models import Tarea, Proveedor, Visitas, Modelo, ResultadoCarrera, Video, Event
 
-
 class ResultadoCarreraForm (forms.ModelForm):
     class Meta:
         model = ResultadoCarrera
@@ -71,3 +70,4 @@ class FormularioInvitaciones(forms.Form):
     email = forms.CharField(label="Email", required=True)
 
     contenido = forms.CharField(label="Contenido", widget=forms.Textarea)
+

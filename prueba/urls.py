@@ -54,6 +54,8 @@ urlpatterns = [
     path('calendario/', views.calendar_view, name='calendar'),
     path('', views.event_list, name='event_list'),
     path('add/', views.add_event, name='add_event'),
+    
+
    
    
 
