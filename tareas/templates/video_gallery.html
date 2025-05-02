@@ -12,23 +12,21 @@
 </h1>
 
 <div class="card">
-    
+
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-borderless table-striped">
-                <a href="{% url 'upload_video' %}"class="btn btn-outline-info" role="button">Subir Nuevo Video</a>
+                <a href="{% url 'upload_video' %}" class="btn btn-outline-info" role="button">Subir Nueva Imagen</a>
                 {% for video in videos %}
                 <li> <br><br><br>
-                    
-                                <h2 style="font-family:Verdana, Geneva, Tahoma, sans-serif; color: red;">{{ video.title }}</h2>
-                                <br><br>
-                                <p>{{ video.description }}</p>
-                                <video width="320" height="240" controls>
-                                    <source src="{{ video.video_file.url }}" type="video/mp4">
-                                    Tu navegador no soporta el formato de video.
-                                </video>
-                </li>
-                        {% endfor %}
-                        {% endblock %}
-   
 
+                    
+                    <h2 style="font-family:Verdana, Geneva, Tahoma, sans-serif; color: red;">{{ video.title }}</h2>
+                    <br><br>
+                    <p>{{ video.description }}</p>
+                    <img src="{{ video.image_file.url }}" width="800" height="600">
+                    
+
+                </li>
+                {% endfor %}
+                {% endblock %}

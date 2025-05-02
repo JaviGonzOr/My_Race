@@ -46,7 +46,7 @@ class ProveedorForm (forms.ModelForm):
 class VideoForm(forms.ModelForm):
     class Meta:
         model = Video
-        fields = ['title', 'description', 'video_file']
+        fields = ['title', 'description', 'image_file']
 
 class EventForm(forms.ModelForm):
     class Meta:
